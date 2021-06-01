@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TV</title>
+</head>
+<body>
+
+    
+  
+      <div class="tv-layout">
+	  
+        <div class="container-fluid">
+				
+          <div class="row">
+            <div class="span12">
+			
+			
+<div class="nav-row">
+<a href="index.html">
+<div class="round-box back-arrow">
+<img src="../../assets/images/icons/arrow-back.png">
+</div>
+</a>
+
+<a href="index.html">
+<div class="round-box close-icon">
+<img src="../../assets/images/icons/close-icon.png">
+</div>
+</a>
+
+</div>
+
+
+<div class="tv-data-row">
+
+
+<div class="col-12">
+
+<div class="seach-box">
+<div class="input-group">
+<span class="input-search">
+<img src="../../assets/images/icons/search-icon.png">
+</span>
+<input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="typeWord">
+</div>
+</div>
+
+<!-- <app-search-results></app-search-results> -->
+
+<div class="search-block-iteams">
+<div class="recent-search">
+<h1>Recent Search Iteams</h1>
+
+<div class="seach-item" *ngFor="let item of searchItems">
+<span>
+<img src="../../assets/images/icons/reload-icon.png">
+{{item}}
+</span>
+</div>
+
+</div>
+
+<!-- <div class="key-board-box" id="show-numbers" style="display:none;"> -->
+<div class="key-board-box" id="show-numbers" *ngIf="!showAlpha">
+<div class="key-board-row">
+<span class="key"><button (click)="addAlpha('1')">1</button></span>
+<span class="key"><button (click)="addAlpha('2')">2</button></span>
+<span class="key"><button (click)="addAlpha('3')">3</button></span>
+<span class="key"><button (click)="addAlpha('&')"> & </button></span>
+<span class="key"><button (click)="addAlpha('#')"> # </button></span>
+<span class="key"><button (click)="addAlpha('(')"> ( </button></span>
+<span class="key"><button (click)="addAlpha(')')"> ) </button></span>
+<span class="arrow-change"><button (click)="spliceAlpha()">
+<img src="../../assets/images/icons/clear-icon.png">
+</button></span>
+</div>
+
+<div class="key-board-row">
+<span class="key"><button (click)="addAlpha('4')">4</button></span>
+<span class="key"><button (click)="addAlpha('5')">5</button></span>
+<span class="key"><button (click)="addAlpha('6')">6</button></span>
+<span class="key"><button (click)="addAlpha('@')"> @ </button></span>
+<span class="key"><button (click)="addAlpha('!')"> ! </button></span>
+<span class="key"><button (click)="addAlpha('?')"> ? </button></span>
+<span class="key"><button (click)="addAlpha(':')"> : </button></span>
+<span class="arrow-change show-alpabets"><button (click)="setAlpha()">& ABC</button></span>
+</div>
+
+<div class="key-board-row">
+<span class="key"><button (click)="addAlpha('7')">7</button></span>
+<span class="key"><button (click)="addAlpha('8')">8</button></span>
+<span class="key"><button (click)="addAlpha('9')">9</button></span>
+<span class="key"><button (click)="addAlpha('0')">0</button></span>
+<span class="key"><button (click)="addAlpha('.')"> . </button></span>
+<span class="key"><button (click)="addAlpha('_')"> _ </button></span>
+<!-- <span class="key"><button (click)="addAlpha('\"')"> '\"' </button></span> -->
+</div>
+
+
+<div class="key-board-row">
+<span class="space-clear"><button (click)="addAlpha(' ')">SPACE</button></span>
+<span class="space-clear"><button (click)="clearAlpha()">CLEAR</button></span>
+<span class="search-btn"><a href="search-results.html"><button (click)="fetchMovie()">SEARCH</button></a></span>
+</div>
+
+</div>
+
+
+<div class="key-board-box" id="show-alpabets" *ngIf="showAlpha">
+<div class="key-board-row">
+<span class="key"><button (click)="addAlpha('A')">A</button></span>
+<span class="key"><button (click)="addAlpha('B')">B</button></span>
+<span class="key"><button (click)="addAlpha('C')">C</button></span>
+<span class="key"><button (click)="addAlpha('D')">D</button></span>
+<span class="key"><button (click)="addAlpha('E')">E</button></span>
+<span class="key"><button (click)="addAlpha('F')">F</button></span>
+<span class="key"><button (click)="addAlpha('G')">G</button></span>
+<span class="arrow-change"><button (click)="spliceAlpha()">
+<img src="../../assets/images/icons/clear-icon.png">
+</button></span>
+</div>
+
+<div class="key-board-row">
+<span class="key"><button (click)="addAlpha('H')">H</button></span>
+<span class="key"><button (click)="addAlpha('I')">I</button></span>
+<span class="key"><button (click)="addAlpha('J')">J</button></span>
+<span class="key"><button (click)="addAlpha('K')">K</button></span>
+<span class="key"><button (click)="addAlpha('L')">L</button></span>
+<span class="key"><button (click)="addAlpha('M')">M</button></span>
+<span class="key"><button (click)="addAlpha('N')">N</button></span>
+<span class="arrow-change show-numbers"><button (click)="setAlpha()"> 123</button></span>
+</div>
+
+<div class="key-board-row">
+<span class="key"><button (click)="addAlpha('O')">O</button></span>
+<span class="key"><button (click)="addAlpha('P')">P</button></span>
+<span class="key"><button (click)="addAlpha('Q')">Q</button></span>
+<span class="key"><button (click)="addAlpha('R')">R</button></span>
+<span class="key"><button (click)="addAlpha('S')">S</button></span>
+<span class="key"><button (click)="addAlpha('T')">T</button></span>
+<span class="key"><button (click)="addAlpha('U')">U</button></span>
+</div>
+
+<div class="key-board-row">
+<span class="key"><button (click)="addAlpha('V')">V</button></span>
+<span class="key"><button (click)="addAlpha('W')">W</button></span>
+<span class="key"><button (click)="addAlpha('X')">X</button></span>
+<span class="key"><button (click)="addAlpha('Y')">Y</button></span>
+<span class="key"><button (click)="addAlpha('Z')">Z</button></span>
+<span class="key"><button (click)="addAlpha('-')">-</button></span>
+<span class="key"><button (click)="addAlpha('\'')">'</button></span>
+</div>
+
+<div class="key-board-row">
+<span class="space-clear"><button (click)="addAlpha(' ')">SPACE</button></span>
+<span class="space-clear"><button (click)="clearAlpha()">CLEAR</button></span>
+<span class="search-btn"><a><button (click)="fetchMovie()">SEARCH</button></a></span>
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+			
+			</div>
+          </div>
+        </div>
+		
+
+
+
+
+
+
+
+</div>
+
+
+
+    <script src="../../assets/js/jquery-1.9.1.min.js"></script>  
+	<script src="../../assets/js/bootstrap.min.js"></script> 
+    <script src="../../assets/js/owl.carousel.js"></script>
+     <script src="../../assets/js/tv.js"></script>
+<script src="../../assets/js/right-slide-panel.js"></script>
+
+
+	<script>
+$(document).ready(function(){
+  $(".show-alpabets").click(function(){
+    $("#show-numbers").hide();
+	 $("#show-alpabets").show();
+  });
+  $(".show-numbers").click(function(){
+    $("#show-alpabets").hide();
+	 $("#show-numbers").show();
+	 });
+});
+</script>
+
+
+
+  </body>
+</html>

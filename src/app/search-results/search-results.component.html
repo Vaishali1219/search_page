@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TV</title>
+ <!-- <link href="assets/css/bootstrap.css" rel="stylesheet"> -->
+ <!-- <link href="assets/css/font-awesome.css" rel="stylesheet"> -->
+<!-- <link href="assets/css/owl.carousel.css" rel="stylesheet"> -->
+<!-- <link href="assets/css/owl.theme.css" rel="stylesheet "> -->
+<!-- <link href="assets/css/slide-right-panel.css" rel="stylesheet"> -->
+<!-- <link href="assets/css/tv.css" rel="stylesheet "> -->
+<!-- <link href="assets/css/responsive.css" rel="stylesheet ">   -->
+</head>
+<body>
+
+    
+  
+      <div class="tv-layout">
+	  
+        <div class="container-fluid">
+				
+          <div class="row">
+            <div class="span12">
+			
+<div class="nav-row">
+<a routerLink="/home">
+<div class="round-box back-arrow">
+<img src="assets/images/icons/arrow-back.png">
+</div>
+</a>
+
+<a routerLink="/home">
+<div class="round-box close-icon">
+<img src="assets/images/icons/close-icon.png">
+</div>
+</a>
+
+</div>
+
+
+<div class="tv-data-row">
+<h1>Search Results</h1>
+
+<div class="col-12">
+
+<div class="search-results" *ngFor="let movie of searchedMovies">
+
+<div class="item" *ngIf="movie.movie_name !== undefined">
+<a>
+<img src="../../assets/images/Telugu/Thumbnails/Master-thumb.jpg" *ngIf="movie.movie_path == null">
+<img [src]="movie.movie_path" alt="No Preview" *ngIf="movie.movie_path !== null">
+<p class="movie-name">{{movie.movie_name}} ({{movie.movie_lang}})</p>
+</a>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+
+</div>
+
+
+
+			
+			</div>
+          </div>
+        </div>
+		
+
+
+
+
+<div class="cd-panel cd-panel--from-right js-cd-panel-main">
+<div class="cd-panel__container">
+<a href="#0" class="cd-panel__close js-cd-close">X</a>
+<div class="cd-panel__content">
+<div class="tv-slide-nav">
+<ul>
+
+<li>
+<a href="login.html">
+<img src="assets/images/icons/login-icon.png"> Login</a>
+</li>
+
+<li>
+<a href="register.html">
+<img src="assets/images/icons/register-icon.png"> Registration</a>
+</li>
+
+<li>
+<a href="subscription.html">
+<img src="assets/images/icons/subscrption-icon.png"> Subscription</a>
+</li>
+
+<li>
+<a href="search.html">
+<img src="assets/images/icons/search-icon.png"> Search</a>
+</li>
+
+
+<li>
+<a href="categories.html">
+<img src="assets/images/icons/categories-icon.png"> Categories</a>
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+    <script src="assets/js/jquery-1.9.1.min.js"></script>  
+	<script src="assets/js/bootstrap.min.js"></script> 
+    <script src="assets/js/owl.carousel.js"></script>
+     <script src="assets/js/tv.js"></script>
+<script src="assets/js/right-slide-panel.js"></script>
+
+
+
+  </body>
+</html>
